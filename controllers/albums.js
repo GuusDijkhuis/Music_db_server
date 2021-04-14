@@ -19,3 +19,11 @@ export const createAlbum = async (req, res) => {
 		console.log(error);
 	}
 }
+
+export const removeAlbum = async (req, res) => {
+	try {
+		await AlbumInfo.deleteOne({_id: req.params.id})
+	} catch (error) {
+		console.log(error);
+	}
+}
