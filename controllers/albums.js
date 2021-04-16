@@ -31,3 +31,11 @@ export const updateAlbum = async (req, res) => {
 		console.log(error);
 	}
 }
+export const getAlbum = async (req, res) => {
+	try {
+		const album = await AlbumInfo.findOne({ _id: req.params.id});
+		res.status(200).json(album);
+	} catch (error) {
+		console.log(error);
+	}
+}
