@@ -32,7 +32,6 @@ export const updateAlbum = async (req, res) => {
 	}
 }
 export const getAlbum = async (req, res) => {
-	const { id } = req.params.id;
 	try {
 		const album = await AlbumInfo.findOne({ _id: req.params.id});
 		res.status(200).json(album);
